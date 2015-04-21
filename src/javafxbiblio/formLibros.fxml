@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<Pane fx:id="frmLibros" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxbiblio.FormLibrosController">
+   <children>
+      <TitledPane layoutX="14.0" layoutY="68.0" prefHeight="289.0" prefWidth="604.0" text="Listado de Libros de la Editorial" underline="true">
+         <content>
+            <TableView fx:id="tbvLibros" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                  <TableColumn prefWidth="75.0" text="ISBN">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="isbn" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="254.0" text="Titulo">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="titulo" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="139.0" text="Autor">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="autor" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn minWidth="6.0" prefWidth="134.0" text="Fecha publicacion">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="fecha_publicacion" />
+                      </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
+         </content></TitledPane>
+      <Button layoutX="167.0" layoutY="375.0" mnemonicParsing="false" onAction="#NuevoAction" text="Nuevo" />
+      <Button layoutX="277.0" layoutY="375.0" mnemonicParsing="false" onAction="#ModificarAction" text="Modificar" />
+      <Button fx:id="btnBorrar" layoutX="408.0" layoutY="375.0" mnemonicParsing="false" onAction="#BorrarAction" text="Borrar" />
+      <Label layoutX="14.0" layoutY="29.0" text="Por Titulo:" />
+      <TextField fx:id="txtTitulo" layoutX="94.0" layoutY="24.0" onKeyReleased="#BuscarPorTitulo" />
+      <Label layoutX="299.0" layoutY="29.0" text="Por lanzamiento:" />
+      <DatePicker fx:id="dtpFecha" layoutX="421.0" layoutY="24.0" onHidden="#BuscarPorFecha" />
+      <Button fx:id="btnImprimir" layoutX="495.0" layoutY="375.0" mnemonicParsing="false" onAction="#ImprimirAction" text="Imprimir" />
+   </children>
+</Pane>
